@@ -10,4 +10,8 @@ let x = 10;
 var y = 20;
 const z = "abcd";
 
+x = "ab";
 console.log(x, y, z);
+
+console.log("b" - "b");
+console.log('b' - 'b');
