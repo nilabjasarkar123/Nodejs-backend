@@ -22,25 +22,32 @@ In js we can use a pair of curly braces to declare a block.
     ...
 }
 Now if a variable is only accessible inside a block then it will be having a block scope.
+
+lexical enviroment : is the local memory, along with lexical enviroment of its parent
+ lexical means in sequence or hirearchy 
 */
 //Global var name
-var name ="nil";
-function greet(){
-    var x=10; // function scope
-    console.log("greetings!",name);
-    console.log(x);
+// {
+//     var x = 9;
+//     console.log(x);
+// }
+// console.log(x);
+var name = "nil";
+function greet() {
+  var x = 10; // function scope
+  console.log("greetings!", name);
+  console.log(x);
 }
 
-function fun()
-{
-    console.log("have fun",name);
+function fun() {
+  console.log("have fun", name);
 }
 greet();
 fun();
 //block scope
 {
-    let x=45;
-    console.log(x);
+  let x = 45;
+  console.log(x);
 }
 /*
 Difference btw let,var,const
@@ -51,32 +58,30 @@ const- it also has block scope same as let, only difference is it does not allow
     you cannot reassign the variable in const.
 */
 //var
-function fun()
-{
-    console.log(x);//undefined due to lexical scoping
-    var x=100;
-    console.log(x);
+function fun() {
+  console.log(x); //undefined due to lexical scoping
+  var x = 100;
+  console.log(x);
 }
-// console.log(x); //not scope as x is defined inside a fn
-
+console.log(x); //not scope as x is defined inside a fn
+fun();
 {
-    var a=20;
+  var a = 20;
 }
 console.log(a);
 
 //let
 
 {
-    let z=12;
+  let z = 12;
 }
-// console.log(z); //throgh error as it is not accessible outside the block
-function fun1()
-{
-    // console.log(y);// cant access, will through error
-    let y=13;
-    console.log(y);
-    y=23;
-    console.log(y);
+//  console.log(z); //throgh error as it is not accessible outside the block
+function fun1() {
+  // console.log(y);// cant access, will through error
+  let y = 13;
+  console.log(y);
+  y = 23;
+  console.log(y);
 }
 fun1();
 /*
@@ -87,15 +92,14 @@ Js start parsing phase outside every thing it maintains global scope, but the mo
 formal declaration is when we declare a variable with let,var and const.
 Autoglobals created when used as targert reference, without const,var,let.
 */
-var teacher='sanket';  //global
-function fun2()
-{
-console.log(subject); //undefiend as in phase 1 it just assigned space but not the content inside the variable hence it shows undefiened
-var teacher='pulkit'; //function scope 
-var subject='JS'; // function scope
-teachingassisstant = 'vaibhav'; //autoglobal
-console.log(teacher);
-console.log(teachingassisstant);
+var teacher = "sanket"; //global
+function fun2() {
+ // console.log(subject); //undefiend as in phase 1 it just assigned space but not the content inside the variable hence it shows undefiened
+  var teacher = "pulkit"; //function scope
+  var subject = "JS"; // function scope
+  teachingassisstant = "vaibhav"; //autoglobal
+  console.log(teacher);
+  console.log(teachingassisstant);
 }
 fun2();
 console.log(teacher);

@@ -19,3 +19,13 @@ if (a) {
 if (a == true) {
   console.log("by");
 }
+
+console.log(10 === "10");
+console.log(NaN === NaN);
+console.log(NaN == NaN);
+
+console.log(isNaN(null));
+isNaN(123);
+
+isNaN(5 - 2);
+isNaN(0);

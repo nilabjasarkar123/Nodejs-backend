@@ -1,3 +1,13 @@
+
+/**
+ * abstract ops 
+ * ToNumber => "-"
+ * a - b
+ * lval = a, rval = b
+ * lnum = ToNumber(a)
+ * rnum = ToNumber(b)
+ *
+ */
 console.log(12 - 1);
 
 console.log(undefined - 3);
